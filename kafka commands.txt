@@ -1,0 +1,21 @@
+1) Zookeeper
+cd C:\kafka_2.11-2.3.0\bin\windows
+zookeeper-server-start.bat ..\..\config\zookeeper.properties
+2) Kafka
+cd C:\kafka_2.11-2.3.0\bin\windows
+kafka-server-start.bat ..\..\config\server.properties
+3) cd C:\kafka_2.11-2.3.0\bin\windows
+producer
+kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+kafka-topics --list --bootstrap-server localhost:9092
+kafka-console-producer --broker-list localhost:9092 --topic test
+4)cd C:\kafka_2.11-2.3.0\bin\windows
+consumer
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+
+it works!!!
+
+kafka-topics --list --bootstrap-server 10.66.216.17:9092
+
+kafka-console-consumer.bat --bootstrap-server 10.66.216.17:9092 --topic e1dcabd39301 --from-beginning
+
